@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from './Components/Navbar';
 import image1 from './images/image.jpg';
 import Footer from './Components/Footer';
 import Stats from './Components/Stats';
 import UpcomingMatches from './Components/UpcomingMatches';
+import WinnerSection from './Components/Winner';
+import ContactPage from './Components/ContactPage';
 
 
 
@@ -22,6 +23,7 @@ export const metadata = {
     type: 'website',
   },
 };
+
 
 
 // Main Page Component
@@ -76,10 +78,17 @@ export default function LandingPage() {
         {/* 3. Upcoming Tournaments Section */}
         
         <UpcomingMatches/>
+        
         {/* 4. Leaderboard & Stats Section (Engaging Data) */}
         <Stats/>
+        {/*5. Winner section*/ }
+        <WinnerSection/>
 
-        {/* 4. footer section Section (Engaging Data) */}
+         {/*6. contact section*/ }
+        <ContactPage/>
+        
+
+        {/* 6. footer section Section (Engaging Data) */}
         <Footer/>
       </main>
       
