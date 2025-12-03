@@ -1,9 +1,7 @@
-
-
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +12,32 @@ const Navbar = () => {
     { name: 'Teams', href: '#teams' },
     { name: 'News', href: '#news' },
   ];
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastscrollX, setLastscrollX] = useState(0);
 
+//   useEffect(() => {
+//     const handleScroll = () => {
+
+//  const currentscrollX = window.scrollX;
+
+//       if (currentscrollX > lastscrollX) {
+//         // Scrolling down
+//         setShowNavbar(true);
+//       } else {
+//         // Scrolling up
+//         setShowNavbar(false);
+//       }
+
+//       setLastscrollX(currentscrollX);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, [lastscrollX]);
   return (
-    <nav
+    showNavbar ? 
+      <nav
       className="bg-black/80 backdrop-blur-sm fixed w-full z-50 shadow-lg border-b border-neon-blue/20"
       role="navigation"
       aria-label="Main Navigation"
@@ -129,7 +150,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </nav> : null
   );
 };
 
